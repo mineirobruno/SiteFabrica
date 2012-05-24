@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{170357DB-E733-4EB1-A5A6-A2BECC210B36}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DolcePeccato.WEBUI</RootNamespace>
+    <AssemblyName>DolcePeccato.WEBUI</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60501.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="WebSitePages\ClienteCadastro.aspx" />
+    <Content Include="WebSitePages\Contato.aspx" />
+    <Content Include="WebSitePages\Default.aspx" />
+    <Content Include="WebSitePages\Empresa.aspx" />
+    <Content Include="WebSitePages\js\jquery-1.2.6.js" />
+    <Content Include="WebSitePages\old\contato.html" />
+    <Content Include="WebSitePages\css\estilos.css" />
+    <Content Include="WebSitePages\css\reset.css" />
+    <Content Include="WebSitePages\old\empresa.html" />
+    <Content Include="WebSitePages\old\home.html" />
+    <Content Include="WebSitePages\img\arrow-slides.png" />
+    <Content Include="WebSitePages\img\background.png" />
+    <Content Include="WebSitePages\img\bg-filters-bombons.png" />
+    <Content Include="WebSitePages\img\bg-filters-cestas.png" />
+    <Content Include="WebSitePages\img\bg-filters-todos.png" />
+    <Content Include="WebSitePages\img\bg-footer.png" />
+    <Content Include="WebSitePages\img\bg-links-menu.png" />
+    <Content Include="WebSitePages\img\bg-menu.png" />
+    <Content Include="WebSitePages\img\bg-price.png" />
+    <Content Include="WebSitePages\img\bg-slide-img.png" />
+    <Content Include="WebSitePages\img\bg-slide-title.png" />
+    <Content Include="WebSitePages\img\bg-tipo-produto.png" />
+    <Content Include="WebSitePages\img\bg-views-list.png" />
+    <Content Include="WebSitePages\img\bg-views-table.png" />
+    <Content Include="WebSitePages\img\bg-yellow.png" />
+    <Content Include="WebSitePages\img\example-frame.png" />
+    <Content Include="WebSitePages\img\icon-address.png" />
+    <Content Include="WebSitePages\img\icon-back.png" />
+    <Content Include="WebSitePages\img\icon-bombom.png" />
+    <Content Include="WebSitePages\img\icon-bt-brown.png" />
+    <Content Include="WebSitePages\img\icon-bt-comprar.png" />
+    <Content Include="WebSitePages\img\icon-bt-yellow.png" />
+    <Content Include="WebSitePages\img\icon-contact-form.png" />
+    <Content Include="WebSitePages\img\icon-contato.png" />
+    <Content Include="WebSitePages\img\icon-email.png" />
+    <Content Include="WebSitePages\img\icon-list.png" />
+    <Content Include="WebSitePages\img\icon-phone.png" />
+    <Content Include="WebSitePages\img\icon-sitemap.png" />
+    <Content Include="WebSitePages\img\icon-sublist.png" />
+    <Content Include="WebSitePages\img\img-contato.jpg" />
+    <Content Include="WebSitePages\img\img-empresa.jpg" />
+    <Content Include="WebSitePages\img\img-produto.jpg" />
+    <Content Include="WebSitePages\img\img-separator.gif" />
+    <Content Include="WebSitePages\img\loading.gif" />
+    <Content Include="WebSitePages\img\logo-topo.png" />
+    <Content Include="WebSitePages\img\logo-white.png" />
+    <Content Include="WebSitePages\img\menu-fundo.png" />
+    <Content Include="WebSitePages\img\slide-pagination.png" />
+    <Content Include="WebSitePages\img\slide1.jpg" />
+    <Content Include="WebSitePages\img\slide2.jpg" />
+    <Content Include="WebSitePages\img\topo-empresa.jpg" />
+    <Content Include="WebSitePages\img\topo-home.jpg" />
+    <Content Include="WebSitePages\img\topo-produtos.jpg" />
+    <Content Include="WebSitePages\old\item-produtos.html" />
+    <Content Include="WebSitePages\js\hoverIntent.js" />
+    <Content Include="WebSitePages\js\jquery.js" />
+    <Content Include="WebSitePages\js\jquery.pajinate.js" />
+    <Content Include="WebSitePages\js\slides.min.jquery.js" />
+    <Content Include="WebSitePages\Bombons.aspx" />
+    <Content Include="WebSitePages\ProdutoCadastro.aspx" />
+    <Content Include="WebSitePages\Cestas.aspx" />
+    <Content Include="WebSitePages\ProdutoDetalhe.aspx" />
+    <Content Include="WebSitePages\ProdutoLista.aspx" />
+    <Content Include="WebSitePages\old\produtos-bombons.html" />
+    <Content Include="WebSitePages\old\produtos-cestas.html" />
+    <Content Include="WebSitePages\old\produtos-todos.html" />
+    <Content Include="WebSitePages\Testes.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\ClienteCadastro.aspx.cs">
+      <DependentUpon>ClienteCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\ClienteCadastro.aspx.designer.cs">
+      <DependentUpon>ClienteCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\img\Image.ashx.cs">
+      <DependentUpon>Image.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSitePages\Contato.aspx.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Contato.aspx.designer.cs">
+      <DependentUpon>Contato.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Empresa.aspx.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Empresa.aspx.designer.cs">
+      <DependentUpon>Empresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Bombons.aspx.cs">
+      <DependentUpon>Bombons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Bombons.aspx.designer.cs">
+      <DependentUpon>Bombons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoCadastro.aspx.cs">
+      <DependentUpon>ProdutoCadastro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoCadastro.aspx.designer.cs">
+      <DependentUpon>ProdutoCadastro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Cestas.aspx.cs">
+      <DependentUpon>Cestas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Cestas.aspx.designer.cs">
+      <DependentUpon>Cestas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoDetalhe.aspx.cs">
+      <DependentUpon>ProdutoDetalhe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoDetalhe.aspx.designer.cs">
+      <DependentUpon>ProdutoDetalhe.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoLista.aspx.cs">
+      <DependentUpon>ProdutoLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\ProdutoLista.aspx.designer.cs">
+      <DependentUpon>ProdutoLista.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Templates\master.Master.cs">
+      <DependentUpon>master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Templates\master.Master.designer.cs">
+      <DependentUpon>master.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebSitePages\Testes.aspx.cs">
+      <DependentUpon>Testes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSitePages\Testes.aspx.designer.cs">
+      <DependentUpon>Testes.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="WebSitePages\img\Image.ashx" />
+    <None Include="WebSitePages\css\BRUSHSCI.eot" />
+    <None Include="WebSitePages\css\BRUSHSCI.TTF" />
+    <None Include="WebSitePages\css\calibri.eot" />
+    <None Include="WebSitePages\css\calibri.ttf" />
+    <None Include="WebSitePages\css\calibrib.eot" />
+    <None Include="WebSitePages\css\calibrib.ttf" />
+    <None Include="WebSitePages\css\calibrii.eot" />
+    <None Include="WebSitePages\css\calibrii.ttf" />
+    <None Include="WebSitePages\img\Thumbs.db" />
+    <None Include="WebSitePages\img\_notes\img-separator.gif.mno" />
+    <Content Include="WebSitePages\Templates\master.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{32FF51D7-67DF-4B10-967C-47D58097B629}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presenter.Contracts\Presenter.Contracts.csproj">
+      <Project>{F0E49CDF-6A7B-4772-857A-6D0AF980FD7D}</Project>
+      <Name>Presenter.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Presenter\Presenter.csproj">
+      <Project>{36F5C561-BEFD-4BD8-A7E3-96A64FE2C5A7}</Project>
+      <Name>Presenter %28Presenter\Presenter%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19327</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

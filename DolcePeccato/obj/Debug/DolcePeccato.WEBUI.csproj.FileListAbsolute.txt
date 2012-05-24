@@ -1,0 +1,30 @@
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\DTO.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Presenter.Contracts.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Presenter.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Framework.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\DTO.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Presenter.Contracts.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Presenter.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\bin\Framework.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\obj\Debug\DolcePeccato.WEBUI.dll
+C:\Users\Bruno\Desktop\DolcePeccato\DolcePeccato\obj\Debug\DolcePeccato.WEBUI.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DTO.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Presenter.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Presenter.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DAO.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.DAO.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Framework.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DTO.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Presenter.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Presenter.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DAO.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.DAO.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\Framework.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Debug\DolcePeccato.WEBUI.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Debug\DolcePeccato.WEBUI.pdb

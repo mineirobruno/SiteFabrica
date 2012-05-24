@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/master.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Dolce Peccato - Chocolates Artesanais</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+
+<!-- MENU DROPDOWN -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var config = {    
+			 over: function(){
+				 $(this).children('ul.dropdown').slideDown();
+			 },
+			 timeout: 200, // number = milliseconds delay before onMouseOut    
+			 out: function(){
+				 $(this).children('ul.dropdown').slideUp('fast');
+			 }
+		};
+		$('#menu li').hoverIntent(config);
+	});
+</script>
+
+<!-- MENU CURRENT PAGE -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var path = location.href.substring(location.href.lastIndexOf('/') + 1,location.href.length);
+		if ( path ) {
+			$('#menu li a').removeClass('current');
+			$('#menu li a[href="' + path + '"]').addClass('current');
+			$('#menu li a.current').parent().parent().prev('a').addClass('current');
+		}
+	});
+</script>
+
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id="header">
+	<a id="logo" href="home.html" title="Home"></a>
+</div>
+<div id="menu-fundo">
+	<ul id="menu">
+    	<li><a id="home" href="home.html" class="current">Home</a></li>
+        <li><a id="empresa" href="empresa.html">Empresa</a></li>
+        <li><a id="produtos" href="produtos-todos.html">Produtos</a>
+        	<ul class="dropdown">
+            	<li><a href="produtos-cestas.html">Cestas</a></li>
+                <li><a href="produtos-bombons.html">Bombons</a></li>
+            </ul>
+        </li>
+        <li><a id="promocoes" href="#">Promoções</a></li>
+        <li><a id="contato" href="contato.html">Contato</a></li>
+    </ul>
+</div>
+<div id="content">
+	<!-- InstanceBeginEditable name="content" -->
+    <div class="left">
+        <div class="page-image">
+            <img src="img/img-contato.jpg"/>
+        </div>
+        <div class="img-shadow"></div>
+    </div>
+    <div class="right">
+    	<p class="page-title">Entre em contato conosco</p>
+        <div class="contact-info">
+        	<p class="phone">(051) 3377.3572</p>
+            <p class="e-mail">chocolates.dolcepeccato@gmail.com</p>
+            <p class="address">Rua Lorem Ipsum Pellentesque, nº 1520<br/>
+            Bairro Cidade Baixa - Porto Alegre/RS</p>
+        </div>
+    </div>
+    <div class="separator"></div>
+    <div class="contact-form">
+    	<b class="form-title">Envie uma mensagem</b>
+    	<p class="form-description">Preencha os campos do formulário abaixo e envie sua mensagem, crítica ou sugestão. Em breve, entraremos em contato!</p>
+        <table class="form-table" cellpadding="0" cellspacing="0">
+        	<tr>
+            	<td style="width:420px;">
+                	<p class="label">Nome:</p>
+                    <input style="width:350px;" name="" type="text" />
+                </td>
+                <td rowspan="3" style="width:420px;">
+                	<p class="label">Mensagem:</p>
+                    <textarea name="" style="width:350px;height:172px;"></textarea>
+                </td>
+            </tr>
+            <tr>
+            	<td>
+                	<p class="label">E-mail:</p>
+                    <input style="width:350px;" name="" type="text" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p class="label">Telefone:</p>
+                    <input style="width:350px;" name="" type="text" />
+                </td>
+                <td style="vertical-align:bottom;">
+                    <input class="bt-enviar" name="" type="submit" value="Enviar" />
+                </td>
+            </tr>
+        </table>
+    </div>
+	<!-- InstanceEndEditable -->
+</div>
+<div id="footer">
+	<div id="footer-content">
+        <div id="sitemap" class="footer-div">
+            <p class="footer-title">Mapa do Site</p>
+            <ul>
+            	<li><a href="home.html">Home</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="produtos-todos.html">Produtos</a>
+                	<ul>
+                    	<li><a href="produtos-cestas.html">Cestas</a></li>
+                        <li><a href="produtos-bombons.html">Bombons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div id="contato" class="footer-div">
+            <p class="footer-title">Contato</p>
+            <p>Nulla commodo feugiat lacinia. Vivamus magna, faucibus interdum sagittis ut, luctus luctus elit.</p>
+            <p class="phone">(051) 3377.3572</p>
+            <p class="e-mail">chocolates.dolcepeccato@gmail.com</p>
+            <p class="address">Rua Lorem Ipsum Pellentesque, nº 1520 <br/>Bairro Cidade Baixa - Porto Alegre/RS</p> 
+        </div>
+  <div id="copyright" class="footer-div">
+        	<img id="footer-logo" src="img/logo-white.png"/>
+            <p>Copyright © 2012. Todos os direitos reservados.</p>
+      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+      <p class="credits">Criação: <a href="#">Wagner Souza</a>.</p>
+    <p class="credits">Desenvolvimento: <a href="#">Bruno Cruz</a>.</p>
+        </div>
+    </div>
+</div>
+</body>
+<!-- InstanceEnd --></html>

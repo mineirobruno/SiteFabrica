@@ -1,0 +1,10 @@
+C:\Users\Bruno\Desktop\DolcePeccato\Framework\bin\Debug\Framework.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Framework\bin\Debug\Framework.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Framework\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Desktop\DolcePeccato\Framework\obj\Debug\Framework.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Framework\obj\Debug\Framework.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\bin\Debug\Framework.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\bin\Debug\Framework.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\Framework.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\Framework.pdb

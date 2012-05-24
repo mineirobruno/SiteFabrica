@@ -1,0 +1,10 @@
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter.Contracts\bin\Debug\Presenter.Contracts.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter.Contracts\bin\Debug\Presenter.Contracts.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter.Contracts\obj\Debug\Presenter.Contracts.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter.Contracts\obj\Debug\Presenter.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter.Contracts\bin\Debug\Presenter.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter.Contracts\bin\Debug\Presenter.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter.Contracts\obj\Debug\Presenter.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter.Contracts\obj\Debug\Presenter.Contracts.pdb

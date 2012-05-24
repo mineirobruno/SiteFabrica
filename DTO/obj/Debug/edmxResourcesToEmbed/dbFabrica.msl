@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbfabricaModelStoreContainer" CdmEntityContainer="dbfabricaEntities">
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="dbfabricaModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Ramo" ColumnName="Ramo" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedido">
+      <EntityTypeMapping TypeName="dbfabricaModel.pedido">
+        <MappingFragment StoreEntitySet="pedido">
+          <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produto">
+      <EntityTypeMapping TypeName="dbfabricaModel.produto">
+        <MappingFragment StoreEntitySet="produto">
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Ingradientes" ColumnName="Ingradientes" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Preco" ColumnName="Preco" />
+          <ScalarProperty Name="Estoque" ColumnName="Estoque" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produtoxpromocao">
+      <EntityTypeMapping TypeName="dbfabricaModel.produtoxpromocao">
+        <MappingFragment StoreEntitySet="produtoxpromocao">
+          <ScalarProperty Name="ProdutoXPromocaoID" ColumnName="ProdutoXPromocaoID" />
+          <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
+          <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="promocao">
+      <EntityTypeMapping TypeName="dbfabricaModel.promocao">
+        <MappingFragment StoreEntitySet="promocao">
+          <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="produtoxpedido">
+      <EntityTypeMapping TypeName="dbfabricaModel.produtoxpedido">
+        <MappingFragment StoreEntitySet="produtoxpedido">
+          <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
+          <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
+          <ScalarProperty Name="ProdutoXPedidoID" ColumnName="ProdutoXPedidoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

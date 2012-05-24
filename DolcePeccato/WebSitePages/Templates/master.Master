@@ -1,0 +1,116 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="DolcePeccato.WEBUI.WebSitePages.Templates.master" %>
+
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>--%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <asp:ContentPlaceHolder ID="doctitle" runat="server">
+        <title>Dolce Peccato - Chocolates Artesanais</title>
+    </asp:ContentPlaceHolder>
+
+    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/estilos.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/hoverIntent.js"></script>
+
+    <!-- MENU DROPDOWN -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var config = {
+                over: function () {
+                    $(this).children('ul.dropdown').slideDown();
+                },
+                timeout: 200, // number = milliseconds delay before onMouseOut    
+                out: function () {
+                    $(this).children('ul.dropdown').slideUp('fast');
+                }
+            };
+            $('#menu li').hoverIntent(config);
+        });
+    </script>
+
+    <!-- MENU CURRENT PAGE -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var path = location.href.substring(location.href.lastIndexOf('/') + 1, location.href.length);
+            if (path) {
+                $('#menu li a').removeClass('current');
+                $('#menu li a[href="' + path + '"]').addClass('current');
+                $('#menu li a.current').parent().parent().prev('a').addClass('current');
+            }
+        });
+    </script>
+
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+<form id=form2 runat="server">
+<asp:ScriptManager ID="ScriptManagerEstatistica" runat="server" EnableScriptGlobalization="true"
+        EnableScriptLocalization="true" EnablePageMethods="true">
+    </asp:ScriptManager>
+<div id="header">
+	<a id="logo" href="../WebSitePages/Default.aspx" title="Home"></a>
+</div>
+<div id="menu-fundo">
+	<ul id="menu">
+    	<li><a id="home" href="Default.aspx" class="current">Home</a></li>
+        <li><a id="empresa" href="Empresa.aspx">Empresa</a></li>
+        <li><a id="produtos" href="ProdutoList.aspx">Produtos</a>
+        	<ul class="dropdown">
+            	<li><a href="Cestas.aspx">Cestas</a></li>
+                <li><a href="Bombons.aspx">Bombons</a></li>
+            </ul>
+        </li>        
+        <li><a id="promocoes" href="#">Promoções</a></li>
+        <li><a id="A1" href="Contato.aspx">Contato</a></li>
+        <li><a id="CadastroLogin" href="ProdutoCadastro.aspx">Cadastro</a>
+        	<%--<ul class="dropdown">
+            	<li><a href="Login.aspx">Login</a></li>
+            </ul>--%>
+        </li>
+    </ul>
+</div>
+<div id="content">
+    <asp:ContentPlaceHolder ID="content" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+<div id="footer">
+	<div id="footer-content">
+        <div id="sitemap" class="footer-div">
+            <p class="footer-title">Mapa do Site</p>
+            <ul>
+            	<li><a href="~/WebSitePages/Default.aspx">Home</a></li>
+                <li><a href="~/WebSitePages/Empresa.aspx">Empresa</a></li>
+                <li><a href="~/WebSitePages/ProdutoList.aspx">Produtos</a>
+                	<ul>
+                    	<li><a href="~/WebSitePages/Cestas.aspx">Cestas</a></li>
+                        <li><a href="~/WebSitePages/Bombons.aspx">Bombons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div id="contato" class="footer-div">
+            <p class="footer-title">Contato</p>
+            <p>Nulla commodo feugiat lacinia. Vivamus magna, faucibus interdum sagittis ut, luctus luctus elit.</p>
+            <p class="phone">(051) 3377.3572</p>
+            <p class="e-mail">chocolates.dolcepeccato@gmail.com</p>
+            <p class="address">Rua Lorem Ipsum Pellentesque, nº 1520 <br/>Bairro Cidade Baixa - Porto Alegre/RS</p> 
+        </div>
+  <div id="copyright" class="footer-div">
+        	<img id="footer-logo" src="img/logo-white.png"/>
+            <p>Copyright © 2012. Todos os direitos reservados.</p>
+      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+      <p class="credits">Criação: <a href="#">Wagner Souza</a>.</p>
+    <p class="credits">Desenvolvimento: <a href="#">Bruno Cruz</a>.</p>
+        </div>
+    </div>
+</div>
+</form>
+</body>
+</html>

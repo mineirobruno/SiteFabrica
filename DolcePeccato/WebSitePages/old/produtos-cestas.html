@@ -1,0 +1,247 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/master.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Dolce Peccato - Chocolates Artesanais</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+
+<!-- MENU DROPDOWN -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var config = {    
+			 over: function(){
+				 $(this).children('ul.dropdown').slideDown();
+			 },
+			 timeout: 200, // number = milliseconds delay before onMouseOut    
+			 out: function(){
+				 $(this).children('ul.dropdown').slideUp('fast');
+			 }
+		};
+		$('#menu li').hoverIntent(config);
+	});
+</script>
+
+<!-- MENU CURRENT PAGE -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var path = location.href.substring(location.href.lastIndexOf('/') + 1,location.href.length);
+		if ( path ) {
+			$('#menu li a').removeClass('current');
+			$('#menu li a[href="' + path + '"]').addClass('current');
+			$('#menu li a.current').parent().parent().prev('a').addClass('current');
+		}
+	});
+</script>
+
+<!-- InstanceBeginEditable name="head" -->
+<!-- PRODUTOS PAGINATION -->
+<script type="text/javascript" src="js/jquery.pajinate.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#lista-produtos ul li').not('.cesta').remove();
+		$('#lista-produtos').pajinate({
+			items_per_page : 6
+		});
+	});
+</script>
+
+<!-- PRODUTOS VIEW -->
+<script type="text/javascript">
+	$(window).load(function(){
+		$('#views #table').click(function(){
+			$('#lista-produtos').removeClass().hide().addClass('table').fadeIn('slow');
+		});
+		$('#views #list').click(function(){
+			$('#lista-produtos').removeClass().hide().addClass('list').fadeIn('slow');
+		});
+		$('.views-option').click(function(){
+			$('.views-option').removeClass('active');
+			$(this).addClass('active');
+		});
+	});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id="header">
+	<a id="logo" href="home.html" title="Home"></a>
+</div>
+<div id="menu-fundo">
+	<ul id="menu">
+    	<li><a id="home" href="home.html" class="current">Home</a></li>
+        <li><a id="empresa" href="empresa.html">Empresa</a></li>
+        <li><a id="produtos" href="produtos-todos.html">Produtos</a>
+        	<ul class="dropdown">
+            	<li><a href="produtos-cestas.html">Cestas</a></li>
+                <li><a href="produtos-bombons.html">Bombons</a></li>
+            </ul>
+        </li>
+        <li><a id="promocoes" href="#">Promoções</a></li>
+        <li><a id="contato" href="contato.html">Contato</a></li>
+    </ul>
+</div>
+<div id="content">
+	<!-- InstanceBeginEditable name="content" -->
+    <div id="filters">
+    	<a href="produtos-todos.html" class="filters-option" id="todos" title="Listar todos os produtos">Todos</a>
+        <a href="produtos-cestas.html" class="filters-option active" id="cestas" title="Listar somente as cestas">Cestas</a>
+        <a href="produtos-bombons.html" class="filters-option" id="bombons" title="Listar somente os bombons">Bombons</a>
+    </div>
+    <div id="views">
+    	<div class="views-option active" id="table" title="Visualizar em forma de tabela"></div>
+        <div class="views-option" id="list" title="Visualizar em forma de lista"></div>
+    </div>
+    <div class="separator"></div>
+    <div id="lista-produtos" class="table">
+    	<div class="info_text"></div>
+        <ul class="content">
+             <li class="bombom">
+             	<div class="img-produto"><img src="img/img-produto.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="cesta">
+             	<div class="img-produto"><img src="img/slide1.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="cesta">
+             	<div class="img-produto"><img src="img/slide2.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="bombom">
+             	<div class="img-produto"><img src="img/img-produto.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="bombom">
+             	<div class="img-produto"><img src="img/img-produto.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="cesta">
+             	<div class="img-produto"><img src="img/slide1.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="cesta">
+             	<div class="img-produto"><img src="img/slide2.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+             <li class="bombom">
+             	<div class="img-produto"><img src="img/img-produto.jpg"/></div>
+                <div class="tipo-produto"></div>
+                <p class="nome-produto">Aenean pharetra gravida commodo</p>
+                <div class="price-lista">
+                    <span class="currency">R$</span>
+                    <span class="value">39</span><span class="comma">,</span>
+                    <span class="cents">90</span>
+                </div>
+                <p class="resumo-produto">Nam eleifend interdum ullamcorper. Suspendisse odio, hendrerit sed euismod non, faucibus non dui. Ut tortor purus, elementum ac vestibulum quis, interdum non diam.</p>
+                <a class="bt-yellow" href="#">Comprar</a>
+                <a class="bt-more" href="item-produtos.html">Detalhes</a>
+             </li>
+        </ul>
+        <div class="page_navigation"></div>
+    </div>
+	<!-- InstanceEndEditable -->
+</div>
+<div id="footer">
+	<div id="footer-content">
+        <div id="sitemap" class="footer-div">
+            <p class="footer-title">Mapa do Site</p>
+            <ul>
+            	<li><a href="home.html">Home</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="produtos-todos.html">Produtos</a>
+                	<ul>
+                    	<li><a href="produtos-cestas.html">Cestas</a></li>
+                        <li><a href="produtos-bombons.html">Bombons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div id="contato" class="footer-div">
+            <p class="footer-title">Contato</p>
+            <p>Nulla commodo feugiat lacinia. Vivamus magna, faucibus interdum sagittis ut, luctus luctus elit.</p>
+            <p class="phone">(051) 3377.3572</p>
+            <p class="e-mail">chocolates.dolcepeccato@gmail.com</p>
+            <p class="address">Rua Lorem Ipsum Pellentesque, nº 1520 <br/>Bairro Cidade Baixa - Porto Alegre/RS</p> 
+        </div>
+  <div id="copyright" class="footer-div">
+        	<img id="footer-logo" src="img/logo-white.png"/>
+            <p>Copyright © 2012. Todos os direitos reservados.</p>
+      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+      <p class="credits">Criação: <a href="#">Wagner Souza</a>.</p>
+    <p class="credits">Desenvolvimento: <a href="#">Bruno Cruz</a>.</p>
+        </div>
+    </div>
+</div>
+</body>
+<!-- InstanceEnd --></html>

@@ -1,0 +1,26 @@
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Presenter.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Presenter.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\DTO.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Framework.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Presenter.Contracts.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\DTO.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Framework.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\bin\Debug\Presenter.Contracts.pdb
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\obj\Debug\Presenter.dll
+C:\Users\Bruno\Desktop\DolcePeccato\Presenter\obj\Debug\Presenter.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Presenter.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Presenter.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DAO.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DTO.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Framework.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Presenter.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DAO.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\DTO.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Framework.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\bin\Debug\Presenter.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\Presenter.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\Presenter.pdb

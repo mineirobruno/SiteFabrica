@@ -1,0 +1,194 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/master.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Dolce Peccato - Chocolates Artesanais</title>
+<!-- InstanceEndEditable -->
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/estilos.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/hoverIntent.js"></script>
+
+<!-- MENU DROPDOWN -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var config = {    
+			 over: function(){
+				 $(this).children('ul.dropdown').slideDown();
+			 },
+			 timeout: 200, // number = milliseconds delay before onMouseOut    
+			 out: function(){
+				 $(this).children('ul.dropdown').slideUp('fast');
+			 }
+		};
+		$('#menu li').hoverIntent(config);
+	});
+</script>
+
+<!-- MENU CURRENT PAGE -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		var path = location.href.substring(location.href.lastIndexOf('/') + 1,location.href.length);
+		if ( path ) {
+			$('#menu li a').removeClass('current');
+			$('#menu li a[href="' + path + '"]').addClass('current');
+			$('#menu li a.current').parent().parent().prev('a').addClass('current');
+		}
+	});
+</script>
+
+<!-- InstanceBeginEditable name="head" -->
+
+<!-- Slides jQuery plugin -->
+<script src="js/slides.min.jquery.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// Set starting slide to 1
+		var startSlide = 1;
+		// Initialize Slides
+		$('#slides').slides({
+			preload: true,
+			preloadImage: 'img/loading.gif',
+			generatePagination: true,
+			play: 5000,
+			pause: 2500,
+			hoverPause: true,
+			crossfade: true,
+			effect: 'slide, fade',
+			// Get the starting slide
+			start: startSlide,
+			animationStart:function(){
+				$('#slides .right').hide();
+			},
+			animationComplete: function(current){
+				// Set the slide number as a hash
+				$('#slides .right').fadeIn('slow');
+				$('#slides .next').fadeIn('slow');
+				$('#slides .prev').fadeIn('slow');
+			}
+		});
+		$('#slides .prev').click(function(){
+			$(this).hide();
+			$('#slides .next').hide();
+		});
+		$('#slides .next').click(function(){
+			$(this).hide();
+			$('#slides .prev').hide();
+		})
+		$('#slides .pagination li a').click(function(){
+			$('#slides .prev').hide();
+			$('#slides .next').hide();
+		});
+	});
+</script>
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+<div id="header">
+	<a id="logo" href="home.html" title="Home"></a>
+</div>
+<div id="menu-fundo">
+	<ul id="menu">
+    	<li><a id="home" href="home.html" class="current">Home</a></li>
+        <li><a id="empresa" href="empresa.html">Empresa</a></li>
+        <li><a id="produtos" href="produtos-todos.html">Produtos</a>
+        	<ul class="dropdown">
+            	<li><a href="produtos-cestas.html">Cestas</a></li>
+                <li><a href="produtos-bombons.html">Bombons</a></li>
+            </ul>
+        </li>
+        <li><a id="promocoes" href="#">Promoções</a></li>
+        <li><a id="contato" href="contato.html">Contato</a></li>
+    </ul>
+</div>
+<div id="content">
+	<!-- InstanceBeginEditable name="content" -->
+			<div id="slides">
+				<div class="slides_container">
+					<div class="slide">
+                    	<div class="left">
+                            <div class="page-image">
+                                <img src="img/slide1.jpg"/>
+                            </div>
+                            <div class="img-shadow"></div>
+                        </div>
+                        <div class="right">
+                            <p class="page-title">Suspendisse vitae mauris varius convallis</p>
+                            <div class="slide-text">
+                                <p><b>Ingredientes:</b></p>
+                                <p>Donec non sapien sit amet turpis blandit feugiat. Etiam sit amet nunc est sagittis condimentum. Etiam laoreet nisi erat bibendum fermentum. Nulla vitae sapien vel turpis egestas lobortis.</p>
+                            </div>
+                            <div class="price-slide">
+                                <span class="currency">R$ </span>
+                                <span class="value">39</span>
+                                <span class="cents">,90</span>
+                            </div>
+                            <a class="bt-yellow-big" href="#">Comprar</a>
+                            <a class="bt-more-big" href="#">Mais Produtos</a>
+                        </div>
+					</div>
+					<div class="slide">
+						<div class="left">
+                            <div class="page-image">
+                                <img src="img/slide2.jpg"/>
+                            </div>
+                            <div class="img-shadow"></div>
+                        </div>
+						<div class="right">
+                            <p class="page-title">Suspendisse vitae mauris varius convallis</p>
+                            <div class="slide-text">
+                                <p><b>Ingredientes:</b></p>
+                                <p>Donec non sapien sit amet turpis blandit feugiat. Etiam sit amet nunc est sagittis condimentum. Etiam laoreet nisi erat bibendum fermentum. Nulla vitae sapien vel turpis egestas lobortis.</p>
+                            </div>
+                            <div class="price-slide">
+                                <span class="currency">R$ </span>
+                                <span class="value">39</span>
+                                <span class="cents">,90</span>
+                            </div>
+                            <a class="bt-yellow-big" href="#">Comprar</a>
+                            <a class="bt-more-big" href="#">Mais Produtos</a>
+                        </div>
+					</div>
+				</div>
+				<a href="#" class="prev"></a>
+				<a href="#" class="next"></a>
+			</div>
+	<!-- InstanceEndEditable -->
+</div>
+<div id="footer">
+	<div id="footer-content">
+        <div id="sitemap" class="footer-div">
+            <p class="footer-title">Mapa do Site</p>
+            <ul>
+            	<li><a href="home.html">Home</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="produtos-todos.html">Produtos</a>
+                	<ul>
+                    	<li><a href="produtos-cestas.html">Cestas</a></li>
+                        <li><a href="produtos-bombons.html">Bombons</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Promoções</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </div>
+        <div id="contato" class="footer-div">
+            <p class="footer-title">Contato</p>
+            <p>Nulla commodo feugiat lacinia. Vivamus magna, faucibus interdum sagittis ut, luctus luctus elit.</p>
+            <p class="phone">(051) 3377.3572</p>
+            <p class="e-mail">chocolates.dolcepeccato@gmail.com</p>
+            <p class="address">Rua Lorem Ipsum Pellentesque, nº 1520 <br/>Bairro Cidade Baixa - Porto Alegre/RS</p> 
+        </div>
+  <div id="copyright" class="footer-div">
+        	<img id="footer-logo" src="img/logo-white.png"/>
+            <p>Copyright © 2012. Todos os direitos reservados.</p>
+      <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
+      <p class="credits">Criação: <a href="#">Wagner Souza</a>.</p>
+    <p class="credits">Desenvolvimento: <a href="#">Bruno Cruz</a>.</p>
+        </div>
+    </div>
+</div>
+</body>
+<!-- InstanceEnd --></html>

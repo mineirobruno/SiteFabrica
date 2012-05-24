@@ -1,0 +1,5 @@
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\bin\DolcePeccato.WEBUI.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Release\DolcePeccato.WEBUI.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DolcePeccato\obj\Release\DolcePeccato.WEBUI.pdb

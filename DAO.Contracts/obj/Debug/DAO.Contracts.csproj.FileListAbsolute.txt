@@ -1,0 +1,7 @@
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\bin\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\bin\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\bin\Debug\DTO.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\bin\Debug\DTO.pdb
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.pdb
