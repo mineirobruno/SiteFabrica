@@ -14,7 +14,7 @@ namespace DolcePeccato.Presenter
     {
         private int x;
         private static readonly DaoFactory _factory = new DaoFactory();
-        private readonly ProdutoDao _model;
+        private readonly ProdutoDao _model; 
         private readonly IProdutoList _view;
 
         public ProdutoList(IProdutoList view)
