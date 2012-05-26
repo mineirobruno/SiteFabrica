@@ -12,7 +12,7 @@ namespace DolcePeccato.Presenter
 {
     public class ProdutoList
     {
-        private int x; 
+        private int xy; 
         private static readonly DaoFactory _factory = new DaoFactory();
         private readonly ProdutoDao _model; 
         private readonly IProdutoList _view;
