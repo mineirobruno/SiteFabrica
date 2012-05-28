@@ -1,15 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbfabricaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="dbfabricaEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="cliente" EntityType="dbfabricaModel.cliente" />
-    <EntitySet Name="pedido" EntityType="dbfabricaModel.pedido" />
     <EntitySet Name="produto" EntityType="dbfabricaModel.produto" />
     <EntitySet Name="produtoxpromocao" EntityType="dbfabricaModel.produtoxpromocao" />
     <EntitySet Name="promocao" EntityType="dbfabricaModel.promocao" />
-    <AssociationSet Name="pedido_ibfk_1" Association="dbfabricaModel.pedido_ibfk_1">
-      <End Role="cliente" EntitySet="cliente" />
-      <End Role="pedido" EntitySet="pedido" />
-    </AssociationSet>
     <AssociationSet Name="produtoxpromocao_ibfk_2" Association="dbfabricaModel.produtoxpromocao_ibfk_2">
       <End Role="produto" EntitySet="produto" />
       <End Role="produtoxpromocao" EntitySet="produtoxpromocao" />
@@ -23,34 +17,18 @@
       <End Role="produto" EntitySet="produto" />
       <End Role="produtoxpedido" EntitySet="produtoxpedido" />
     </AssociationSet>
+    <EntitySet Name="bairro" EntityType="dbfabricaModel.bairro" />
+    <EntitySet Name="cliente" EntityType="dbfabricaModel.cliente" />
+    <EntitySet Name="pedido" EntityType="dbfabricaModel.pedido" />
+    <AssociationSet Name="FK_cliente" Association="dbfabricaModel.FK_cliente">
+      <End Role="bairro" EntitySet="bairro" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
+    <AssociationSet Name="pedido_ibfk_1" Association="dbfabricaModel.pedido_ibfk_1">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="pedido" EntitySet="pedido" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="cliente">
-    <Key>
-      <PropertyRef Name="ClienteID" />
-    </Key>
-    <Property Name="ClienteID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Nome" Type="String" Nullable="false" />
-    <Property Name="Email" Type="String" />
-    <Property Name="Telefone" Type="String" />
-    <Property Name="Tipo" Type="String" />
-    <Property Name="Ramo" Type="String" />
-    <Property Name="Rua" Type="String" />
-    <Property Name="Numero" Type="String" />
-    <Property Name="Complemento" Type="String" />
-    <Property Name="Cep" Type="String" />
-    <Property Name="Bairro" Type="String" />
-    <NavigationProperty Name="pedido" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="cliente" ToRole="pedido" />
-  </EntityType>
-  <EntityType Name="pedido">
-    <Key>
-      <PropertyRef Name="PedidoID" />
-      <PropertyRef Name="ClienteID" />
-    </Key>
-    <Property Name="PedidoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ClienteID" Type="Int64" Nullable="false" />
-    <Property Name="DataPedido" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="cliente" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="pedido" ToRole="cliente" />
-  </EntityType>
   <EntityType Name="produto">
     <Key>
       <PropertyRef Name="ProdutoID" />
@@ -88,18 +66,6 @@
     <Property Name="DataFim" Type="DateTime" />
     <NavigationProperty Name="produtoxpromocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_1" FromRole="promocao" ToRole="produtoxpromocao" />
   </EntityType>
-  <Association Name="pedido_ibfk_1">
-    <End Role="cliente" Type="dbfabricaModel.cliente" Multiplicity="1" />
-    <End Role="pedido" Type="dbfabricaModel.pedido" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="cliente">
-        <PropertyRef Name="ClienteID" />
-      </Principal>
-      <Dependent Role="pedido">
-        <PropertyRef Name="ClienteID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="produtoxpromocao_ibfk_2">
     <End Role="produto" Type="dbfabricaModel.produto" Multiplicity="1" />
     <End Role="produtoxpromocao" Type="dbfabricaModel.produtoxpromocao" Multiplicity="*" />
@@ -144,6 +110,66 @@
       </Principal>
       <Dependent Role="produtoxpedido">
         <PropertyRef Name="ProdutoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="bairro">
+    <Key>
+      <PropertyRef Name="BairroID" />
+    </Key>
+    <Property Type="Int32" Name="BairroID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" />
+    <Property Type="Decimal" Name="Valor_Entrega" Nullable="false" />
+    <NavigationProperty Name="cliente" Relationship="dbfabricaModel.FK_cliente" FromRole="bairro" ToRole="cliente" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="ClienteID" />
+    </Key>
+    <Property Type="Int64" Name="ClienteID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Nome" Nullable="false" />
+    <Property Type="String" Name="Email" />
+    <Property Type="String" Name="Telefone" />
+    <Property Type="String" Name="Tipo" />
+    <Property Type="String" Name="Ramo" />
+    <Property Type="String" Name="Rua" />
+    <Property Type="String" Name="Numero_Comp" />
+    <Property Type="String" Name="Cep" />
+    <Property Type="Int32" Name="BairroID" />
+    <NavigationProperty Name="bairro" Relationship="dbfabricaModel.FK_cliente" FromRole="cliente" ToRole="bairro" />
+    <NavigationProperty Name="pedido" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="cliente" ToRole="pedido" />
+  </EntityType>
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="PedidoID" />
+      <PropertyRef Name="ClienteID" />
+    </Key>
+    <Property Type="Int64" Name="PedidoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int64" Name="ClienteID" Nullable="false" />
+    <Property Type="DateTime" Name="DataPedido" Nullable="false" />
+    <NavigationProperty Name="cliente" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="pedido" ToRole="cliente" />
+  </EntityType>
+  <Association Name="FK_cliente">
+    <End Type="dbfabricaModel.bairro" Role="bairro" Multiplicity="0..1" />
+    <End Type="dbfabricaModel.cliente" Role="cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bairro">
+        <PropertyRef Name="BairroID" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="BairroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="pedido_ibfk_1">
+    <End Type="dbfabricaModel.cliente" Role="cliente" Multiplicity="1" />
+    <End Type="dbfabricaModel.pedido" Role="pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="ClienteID" />
+      </Principal>
+      <Dependent Role="pedido">
+        <PropertyRef Name="ClienteID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

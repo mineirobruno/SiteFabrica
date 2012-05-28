@@ -49,7 +49,7 @@ Inherits="DolcePeccato.WEBUI.WebSitePages.ProdutoDetalhe" MasterPageFile="~/WebS
     <%--    <p>Cras nisi nisl, pretium non eleifend in, rutrum id est. Fusce adipiscing lacus non tortor rhoncus placerat. Duis in enim ac metus blandit hendrerit dictum id mi. Donec placerat cursus massa commodo vulputate. Etiam dui purus, eleifend a vulputate vel, commodo at leo. Donec ullamcorper consectetur massa, a suscipit purus ornare et. Nunc quis diam eros, eget semper nisi. Cras dictum neque eu sem varius sollicitudin. Curabitur lectus ante, iaculis sit amet porta in, mattis vitae purus. Fusce vitae rutrum sem. Proin hendrerit ipsum non odio sodales bibendum. In nulla turpis, auctor nec consectetur ut, consectetur a sem. Integer et aliquet ligula. Nulla facilisi. Nunc eget velit justo. Ut bibendum nisi vitae metus rutrum in molestie urna elementum. </p>--%>
     </div>
     <div class="separator"></div>
-    <a class="bt-back" href="ProdutoList.aspx">Voltar</a>
+    <a class="bt-back" href="ProdutoLista.aspx">Voltar</a>
 
 </asp:Content>
 

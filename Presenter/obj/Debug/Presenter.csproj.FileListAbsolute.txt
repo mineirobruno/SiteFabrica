@@ -24,3 +24,18 @@ C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\Dolc
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\Presenter.dll
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Presenter\obj\Debug\Presenter.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Presenter.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Presenter.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DTO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Framework.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Presenter.Contracts.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\DTO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Framework.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\bin\Debug\Presenter.Contracts.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\obj\Debug\Presenter.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Presenter\obj\Debug\Presenter.pdb

@@ -1,12 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbfabricaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="dbfabricaModelStoreContainer">
+    <EntitySet Name="bairro" EntityType="dbfabricaModel.Store.bairro" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="cliente" EntityType="dbfabricaModel.Store.cliente" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="pedido" EntityType="dbfabricaModel.Store.pedido" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="produto" EntityType="dbfabricaModel.Store.produto" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="produtoxpedido" EntityType="dbfabricaModel.Store.produtoxpedido" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="produtoxpromocao" EntityType="dbfabricaModel.Store.produtoxpromocao" store:Type="Tables" Schema="dbfabrica" />
     <EntitySet Name="promocao" EntityType="dbfabricaModel.Store.promocao" store:Type="Tables" Schema="dbfabrica" />
+    <AssociationSet Name="FK_cliente" Association="dbfabricaModel.Store.FK_cliente">
+      <End Role="bairro" EntitySet="bairro" />
+      <End Role="cliente" EntitySet="cliente" />
+    </AssociationSet>
     <AssociationSet Name="pedido_ibfk_1" Association="dbfabricaModel.Store.pedido_ibfk_1">
       <End Role="cliente" EntitySet="cliente" />
       <End Role="pedido" EntitySet="pedido" />
@@ -24,6 +29,14 @@
       <End Role="produtoxpromocao" EntitySet="produtoxpromocao" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="bairro">
+    <Key>
+      <PropertyRef Name="BairroID" />
+    </Key>
+    <Property Name="BairroID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Valor_Entrega" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+  </EntityType>
   <EntityType Name="cliente">
     <Key>
       <PropertyRef Name="ClienteID" />
@@ -35,10 +48,9 @@
     <Property Name="Tipo" Type="char" MaxLength="2" />
     <Property Name="Ramo" Type="varchar" MaxLength="50" />
     <Property Name="Rua" Type="varchar" MaxLength="256" />
-    <Property Name="Numero" Type="varchar" MaxLength="7" />
-    <Property Name="Complemento" Type="varchar" MaxLength="100" />
+    <Property Name="Numero/Comp" Type="varchar" MaxLength="30" />
     <Property Name="Cep" Type="varchar" MaxLength="10" />
-    <Property Name="Bairro" Type="varchar" MaxLength="100" />
+    <Property Name="BairroID" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
       warning 6035: The relationship 'produtoxpedido_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
@@ -61,7 +73,7 @@
     <Property Name="Ingradientes" Type="varchar" MaxLength="500" />
     <Property Name="Descricao" Type="varchar" MaxLength="500" />
     <Property Name="Foto" Type="blob" />
-    <Property Name="Preco" Type="decimal" Nullable="false" />
+    <Property Name="Preco" Type="decimal" Nullable="false" Precision="8" Scale="2" />
     <Property Name="Estoque" Type="uint" Nullable="false" />
     <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="20" />
   </EntityType>
@@ -94,6 +106,18 @@
     <Property Name="DataInicio" Type="date" Nullable="false" />
     <Property Name="DataFim" Type="date" />
   </EntityType>
+  <Association Name="FK_cliente">
+    <End Role="bairro" Type="dbfabricaModel.Store.bairro" Multiplicity="0..1" />
+    <End Role="cliente" Type="dbfabricaModel.Store.cliente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bairro">
+        <PropertyRef Name="BairroID" />
+      </Principal>
+      <Dependent Role="cliente">
+        <PropertyRef Name="BairroID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="pedido_ibfk_1">
     <End Role="cliente" Type="dbfabricaModel.Store.cliente" Multiplicity="1" />
     <End Role="pedido" Type="dbfabricaModel.Store.pedido" Multiplicity="*" />

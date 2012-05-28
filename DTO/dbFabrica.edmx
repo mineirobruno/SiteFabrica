@@ -6,12 +6,17 @@
     <edmx:StorageModels>
     <Schema Namespace="dbfabricaModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="dbfabricaModelStoreContainer">
+          <EntitySet Name="bairro" EntityType="dbfabricaModel.Store.bairro" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="cliente" EntityType="dbfabricaModel.Store.cliente" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="pedido" EntityType="dbfabricaModel.Store.pedido" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="produto" EntityType="dbfabricaModel.Store.produto" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="produtoxpedido" EntityType="dbfabricaModel.Store.produtoxpedido" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="produtoxpromocao" EntityType="dbfabricaModel.Store.produtoxpromocao" store:Type="Tables" Schema="dbfabrica" />
           <EntitySet Name="promocao" EntityType="dbfabricaModel.Store.promocao" store:Type="Tables" Schema="dbfabrica" />
+          <AssociationSet Name="FK_cliente" Association="dbfabricaModel.Store.FK_cliente">
+            <End Role="bairro" EntitySet="bairro" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
           <AssociationSet Name="pedido_ibfk_1" Association="dbfabricaModel.Store.pedido_ibfk_1">
             <End Role="cliente" EntitySet="cliente" />
             <End Role="pedido" EntitySet="pedido" />
@@ -29,6 +34,14 @@
             <End Role="produtoxpromocao" EntitySet="produtoxpromocao" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bairro">
+          <Key>
+            <PropertyRef Name="BairroID" />
+          </Key>
+          <Property Name="BairroID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Valor_Entrega" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+        </EntityType>
         <EntityType Name="cliente">
           <Key>
             <PropertyRef Name="ClienteID" />
@@ -40,10 +53,9 @@
           <Property Name="Tipo" Type="char" MaxLength="2" />
           <Property Name="Ramo" Type="varchar" MaxLength="50" />
           <Property Name="Rua" Type="varchar" MaxLength="256" />
-          <Property Name="Numero" Type="varchar" MaxLength="7" />
-          <Property Name="Complemento" Type="varchar" MaxLength="100" />
+          <Property Name="Numero/Comp" Type="varchar" MaxLength="30" />
           <Property Name="Cep" Type="varchar" MaxLength="10" />
-          <Property Name="Bairro" Type="varchar" MaxLength="100" />
+          <Property Name="BairroID" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
       warning 6035: The relationship 'produtoxpedido_ibfk_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
@@ -66,7 +78,7 @@
           <Property Name="Ingradientes" Type="varchar" MaxLength="500" />
           <Property Name="Descricao" Type="varchar" MaxLength="500" />
           <Property Name="Foto" Type="blob" />
-          <Property Name="Preco" Type="decimal" Nullable="false" />
+          <Property Name="Preco" Type="decimal" Nullable="false" Precision="8" Scale="2" />
           <Property Name="Estoque" Type="uint" Nullable="false" />
           <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="20" />
         </EntityType>
@@ -99,6 +111,18 @@
           <Property Name="DataInicio" Type="date" Nullable="false" />
           <Property Name="DataFim" Type="date" />
         </EntityType>
+        <Association Name="FK_cliente">
+          <End Role="bairro" Type="dbfabricaModel.Store.bairro" Multiplicity="0..1" />
+          <End Role="cliente" Type="dbfabricaModel.Store.cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bairro">
+              <PropertyRef Name="BairroID" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="BairroID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="pedido_ibfk_1">
           <End Role="cliente" Type="dbfabricaModel.Store.cliente" Multiplicity="1" />
           <End Role="pedido" Type="dbfabricaModel.Store.pedido" Multiplicity="*" />
@@ -152,14 +176,24 @@
     <edmx:ConceptualModels>
       <Schema Namespace="dbfabricaModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="dbfabricaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="bairro" EntityType="dbfabricaModel.bairro" />
           <EntitySet Name="cliente" EntityType="dbfabricaModel.cliente" />
           <EntitySet Name="pedido" EntityType="dbfabricaModel.pedido" />
           <EntitySet Name="produto" EntityType="dbfabricaModel.produto" />
+          <EntitySet Name="produtoxpedido" EntityType="dbfabricaModel.produtoxpedido" />
           <EntitySet Name="produtoxpromocao" EntityType="dbfabricaModel.produtoxpromocao" />
           <EntitySet Name="promocao" EntityType="dbfabricaModel.promocao" />
+          <AssociationSet Name="FK_cliente" Association="dbfabricaModel.FK_cliente">
+            <End Role="bairro" EntitySet="bairro" />
+            <End Role="cliente" EntitySet="cliente" />
+          </AssociationSet>
           <AssociationSet Name="pedido_ibfk_1" Association="dbfabricaModel.pedido_ibfk_1">
             <End Role="cliente" EntitySet="cliente" />
             <End Role="pedido" EntitySet="pedido" />
+          </AssociationSet>
+          <AssociationSet Name="produtoxpedido_ibfk_2" Association="dbfabricaModel.produtoxpedido_ibfk_2">
+            <End Role="produto" EntitySet="produto" />
+            <End Role="produtoxpedido" EntitySet="produtoxpedido" />
           </AssociationSet>
           <AssociationSet Name="produtoxpromocao_ibfk_2" Association="dbfabricaModel.produtoxpromocao_ibfk_2">
             <End Role="produto" EntitySet="produto" />
@@ -169,27 +203,35 @@
             <End Role="promocao" EntitySet="promocao" />
             <End Role="produtoxpromocao" EntitySet="produtoxpromocao" />
           </AssociationSet>
-          <EntitySet Name="produtoxpedido" EntityType="dbfabricaModel.produtoxpedido" />
-          <AssociationSet Name="produtoxpedido_ibfk_2" Association="dbfabricaModel.produtoxpedido_ibfk_2">
-            <End Role="produto" EntitySet="produto" />
+          <AssociationSet Name="produtoxpedidopedido" Association="dbfabricaModel.produtoxpedidopedido">
             <End Role="produtoxpedido" EntitySet="produtoxpedido" />
+            <End Role="pedido" EntitySet="pedido" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="bairro">
+          <Key>
+            <PropertyRef Name="BairroID" />
+          </Key>
+          <Property Type="Int32" Name="BairroID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="Decimal" Name="Valor_Entrega" Nullable="false" />
+          <NavigationProperty Name="cliente" Relationship="dbfabricaModel.FK_cliente" FromRole="bairro" ToRole="cliente" />
+        </EntityType>
         <EntityType Name="cliente">
           <Key>
             <PropertyRef Name="ClienteID" />
           </Key>
-          <Property Name="ClienteID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Email" Type="String" />
-          <Property Name="Telefone" Type="String" />
-          <Property Name="Tipo" Type="String" />
-          <Property Name="Ramo" Type="String" />
-          <Property Name="Rua" Type="String" />
-          <Property Name="Numero" Type="String" />
-          <Property Name="Complemento" Type="String" />
-          <Property Name="Cep" Type="String" />
-          <Property Name="Bairro" Type="String" />
+          <Property Type="Int64" Name="ClienteID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Email" />
+          <Property Type="String" Name="Telefone" />
+          <Property Type="String" Name="Tipo" />
+          <Property Type="String" Name="Ramo" />
+          <Property Type="String" Name="Rua" />
+          <Property Type="String" Name="Numero_Comp" />
+          <Property Type="String" Name="Cep" />
+          <Property Type="Int32" Name="BairroID" />
+          <NavigationProperty Name="bairro" Relationship="dbfabricaModel.FK_cliente" FromRole="cliente" ToRole="bairro" />
           <NavigationProperty Name="pedido" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="cliente" ToRole="pedido" />
         </EntityType>
         <EntityType Name="pedido">
@@ -197,84 +239,27 @@
             <PropertyRef Name="PedidoID" />
             <PropertyRef Name="ClienteID" />
           </Key>
-          <Property Name="PedidoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ClienteID" Type="Int64" Nullable="false" />
-          <Property Name="DataPedido" Type="DateTime" Nullable="false" />
+          <Property Type="Int64" Name="PedidoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="ClienteID" Nullable="false" />
+          <Property Type="DateTime" Name="DataPedido" Nullable="false" />
           <NavigationProperty Name="cliente" Relationship="dbfabricaModel.pedido_ibfk_1" FromRole="pedido" ToRole="cliente" />
+          <NavigationProperty Name="produtoxpedido" Relationship="dbfabricaModel.produtoxpedidopedido" FromRole="pedido" ToRole="produtoxpedido" />
         </EntityType>
         <EntityType Name="produto">
           <Key>
             <PropertyRef Name="ProdutoID" />
           </Key>
-          <Property Name="ProdutoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="Ingradientes" Type="String" />
-          <Property Name="Descricao" Type="String" />
-          <Property Name="Foto" Type="Binary" />
-          <Property Name="Preco" Type="Decimal" Nullable="false" />
-          <Property Name="Estoque" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="produtoxpromocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_2" FromRole="produto" ToRole="produtoxpromocao" />
+          <Property Type="Int64" Name="ProdutoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="String" Name="Ingradientes" />
+          <Property Type="String" Name="Descricao" />
+          <Property Type="Binary" Name="Foto" />
+          <Property Type="Decimal" Name="Preco" Nullable="false" />
+          <Property Type="Int64" Name="Estoque" Nullable="false" />
           <Property Type="String" Name="Tipo" Nullable="false" />
           <NavigationProperty Name="produtoxpedido" Relationship="dbfabricaModel.produtoxpedido_ibfk_2" FromRole="produto" ToRole="produtoxpedido" />
+          <NavigationProperty Name="produtoxpromocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_2" FromRole="produto" ToRole="produtoxpromocao" />
         </EntityType>
-        <EntityType Name="produtoxpromocao">
-          <Key>
-            <PropertyRef Name="ProdutoXPromocaoID" />
-            <PropertyRef Name="PromocaoID" />
-            <PropertyRef Name="ProdutoID" />
-          </Key>
-          <Property Name="ProdutoXPromocaoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PromocaoID" Type="Int64" Nullable="false" />
-          <Property Name="ProdutoID" Type="Int64" Nullable="false" />
-          <NavigationProperty Name="produto" Relationship="dbfabricaModel.produtoxpromocao_ibfk_2" FromRole="produtoxpromocao" ToRole="produto" />
-          <NavigationProperty Name="promocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_1" FromRole="produtoxpromocao" ToRole="promocao" />
-        </EntityType>
-        <EntityType Name="promocao">
-          <Key>
-            <PropertyRef Name="PromocaoID" />
-          </Key>
-          <Property Name="PromocaoID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Nome" Type="String" Nullable="false" />
-          <Property Name="DataInicio" Type="DateTime" Nullable="false" />
-          <Property Name="DataFim" Type="DateTime" />
-          <NavigationProperty Name="produtoxpromocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_1" FromRole="promocao" ToRole="produtoxpromocao" />
-        </EntityType>
-        <Association Name="pedido_ibfk_1">
-          <End Role="cliente" Type="dbfabricaModel.cliente" Multiplicity="1" />
-          <End Role="pedido" Type="dbfabricaModel.pedido" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="cliente">
-              <PropertyRef Name="ClienteID" />
-            </Principal>
-            <Dependent Role="pedido">
-              <PropertyRef Name="ClienteID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="produtoxpromocao_ibfk_2">
-          <End Role="produto" Type="dbfabricaModel.produto" Multiplicity="1" />
-          <End Role="produtoxpromocao" Type="dbfabricaModel.produtoxpromocao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="produto">
-              <PropertyRef Name="ProdutoID" />
-            </Principal>
-            <Dependent Role="produtoxpromocao">
-              <PropertyRef Name="ProdutoID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="produtoxpromocao_ibfk_1">
-          <End Role="promocao" Type="dbfabricaModel.promocao" Multiplicity="1" />
-          <End Role="produtoxpromocao" Type="dbfabricaModel.produtoxpromocao" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="promocao">
-              <PropertyRef Name="PromocaoID" />
-            </Principal>
-            <Dependent Role="produtoxpromocao">
-              <PropertyRef Name="PromocaoID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="produtoxpedido">
           <Key>
             <PropertyRef Name="ProdutoXPedidoID" />
@@ -285,7 +270,55 @@
           <Property Type="Int64" Name="PedidoID" Nullable="false" />
           <Property Type="Int64" Name="ProdutoID" Nullable="false" />
           <NavigationProperty Name="produto" Relationship="dbfabricaModel.produtoxpedido_ibfk_2" FromRole="produtoxpedido" ToRole="produto" />
+          <NavigationProperty Name="Pedido" />
+          <NavigationProperty Name="pedido" Relationship="dbfabricaModel.produtoxpedidopedido" FromRole="produtoxpedido" ToRole="pedido" />
         </EntityType>
+        <EntityType Name="produtoxpromocao">
+          <Key>
+            <PropertyRef Name="ProdutoXPromocaoID" />
+            <PropertyRef Name="PromocaoID" />
+            <PropertyRef Name="ProdutoID" />
+          </Key>
+          <Property Type="Int64" Name="ProdutoXPromocaoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int64" Name="PromocaoID" Nullable="false" />
+          <Property Type="Int64" Name="ProdutoID" Nullable="false" />
+          <NavigationProperty Name="produto" Relationship="dbfabricaModel.produtoxpromocao_ibfk_2" FromRole="produtoxpromocao" ToRole="produto" />
+          <NavigationProperty Name="promocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_1" FromRole="produtoxpromocao" ToRole="promocao" />
+        </EntityType>
+        <EntityType Name="promocao">
+          <Key>
+            <PropertyRef Name="PromocaoID" />
+          </Key>
+          <Property Type="Int64" Name="PromocaoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Nome" Nullable="false" />
+          <Property Type="DateTime" Name="DataInicio" Nullable="false" />
+          <Property Type="DateTime" Name="DataFim" />
+          <NavigationProperty Name="produtoxpromocao" Relationship="dbfabricaModel.produtoxpromocao_ibfk_1" FromRole="promocao" ToRole="produtoxpromocao" />
+        </EntityType>
+        <Association Name="FK_cliente">
+          <End Type="dbfabricaModel.bairro" Role="bairro" Multiplicity="0..1" />
+          <End Type="dbfabricaModel.cliente" Role="cliente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="bairro">
+              <PropertyRef Name="BairroID" />
+            </Principal>
+            <Dependent Role="cliente">
+              <PropertyRef Name="BairroID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="pedido_ibfk_1">
+          <End Type="dbfabricaModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="dbfabricaModel.pedido" Role="pedido" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cliente">
+              <PropertyRef Name="ClienteID" />
+            </Principal>
+            <Dependent Role="pedido">
+              <PropertyRef Name="ClienteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="produtoxpedido_ibfk_2">
           <End Type="dbfabricaModel.produto" Role="produto" Multiplicity="1" />
           <End Type="dbfabricaModel.produtoxpedido" Role="produtoxpedido" Multiplicity="*" />
@@ -298,57 +331,113 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        <Association Name="produtoxpromocao_ibfk_2">
+          <End Type="dbfabricaModel.produto" Role="produto" Multiplicity="1" />
+          <End Type="dbfabricaModel.produtoxpromocao" Role="produtoxpromocao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="produto">
+              <PropertyRef Name="ProdutoID" />
+            </Principal>
+            <Dependent Role="produtoxpromocao">
+              <PropertyRef Name="ProdutoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="produtoxpromocao_ibfk_1">
+          <End Type="dbfabricaModel.promocao" Role="promocao" Multiplicity="1" />
+          <End Type="dbfabricaModel.produtoxpromocao" Role="produtoxpromocao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="promocao">
+              <PropertyRef Name="PromocaoID" />
+            </Principal>
+            <Dependent Role="produtoxpromocao">
+              <PropertyRef Name="PromocaoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="produtoxpedidopedido">
+          <End Type="dbfabricaModel.produtoxpedido" Role="produtoxpedido" Multiplicity="*" />
+          <End Type="dbfabricaModel.pedido" Role="pedido" Multiplicity="1" />
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbfabricaModelStoreContainer" CdmEntityContainer="dbfabricaEntities">
-          <EntitySetMapping Name="cliente"><EntityTypeMapping TypeName="dbfabricaModel.cliente"><MappingFragment StoreEntitySet="cliente">
-            <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
-            <ScalarProperty Name="Nome" ColumnName="Nome" />
-            <ScalarProperty Name="Email" ColumnName="Email" />
-            <ScalarProperty Name="Telefone" ColumnName="Telefone" />
-            <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-            <ScalarProperty Name="Ramo" ColumnName="Ramo" />
-            <ScalarProperty Name="Rua" ColumnName="Rua" />
-            <ScalarProperty Name="Numero" ColumnName="Numero" />
-            <ScalarProperty Name="Complemento" ColumnName="Complemento" />
-            <ScalarProperty Name="Cep" ColumnName="Cep" />
-            <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="pedido"><EntityTypeMapping TypeName="dbfabricaModel.pedido"><MappingFragment StoreEntitySet="pedido">
-            <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
-            <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
-            <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="produto"><EntityTypeMapping TypeName="dbfabricaModel.produto"><MappingFragment StoreEntitySet="produto">
-            <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <EntitySetMapping Name="bairro">
+            <EntityTypeMapping TypeName="dbfabricaModel.bairro">
+              <MappingFragment StoreEntitySet="bairro">
+                <ScalarProperty Name="Valor_Entrega" ColumnName="Valor_Entrega" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="BairroID" ColumnName="BairroID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="dbfabricaModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="BairroID" ColumnName="BairroID" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Numero_Comp" ColumnName="Numero/Comp" />
+                <ScalarProperty Name="Rua" ColumnName="Rua" />
+                <ScalarProperty Name="Ramo" ColumnName="Ramo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="pedido">
+            <EntityTypeMapping TypeName="dbfabricaModel.pedido">
+              <MappingFragment StoreEntitySet="pedido">
+                <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
+                <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+                <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="dbfabricaModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="Estoque" ColumnName="Estoque" />
+                <ScalarProperty Name="Preco" ColumnName="Preco" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Ingradientes" ColumnName="Ingradientes" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
                 <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
-            <ScalarProperty Name="Nome" ColumnName="Nome" />
-            <ScalarProperty Name="Ingradientes" ColumnName="Ingradientes" />
-            <ScalarProperty Name="Descricao" ColumnName="Descricao" />
-            <ScalarProperty Name="Foto" ColumnName="Foto" />
-            <ScalarProperty Name="Preco" ColumnName="Preco" />
-            <ScalarProperty Name="Estoque" ColumnName="Estoque" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="produtoxpromocao"><EntityTypeMapping TypeName="dbfabricaModel.produtoxpromocao"><MappingFragment StoreEntitySet="produtoxpromocao">
-            <ScalarProperty Name="ProdutoXPromocaoID" ColumnName="ProdutoXPromocaoID" />
-            <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
-            <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="promocao"><EntityTypeMapping TypeName="dbfabricaModel.promocao"><MappingFragment StoreEntitySet="promocao">
-            <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
-            <ScalarProperty Name="Nome" ColumnName="Nome" />
-            <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
-            <ScalarProperty Name="DataFim" ColumnName="DataFim" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="produtoxpedido">
             <EntityTypeMapping TypeName="dbfabricaModel.produtoxpedido">
               <MappingFragment StoreEntitySet="produtoxpedido">
                 <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
                 <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
                 <ScalarProperty Name="ProdutoXPedidoID" ColumnName="ProdutoXPedidoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produtoxpromocao">
+            <EntityTypeMapping TypeName="dbfabricaModel.produtoxpromocao">
+              <MappingFragment StoreEntitySet="produtoxpromocao">
+                <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
+                <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
+                <ScalarProperty Name="ProdutoXPromocaoID" ColumnName="ProdutoXPromocaoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="promocao">
+            <EntityTypeMapping TypeName="dbfabricaModel.promocao">
+              <MappingFragment StoreEntitySet="promocao">
+                <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+                <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="PromocaoID" ColumnName="PromocaoID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -373,28 +462,36 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="dbFabrica">
-        <EntityTypeShape EntityType="dbfabricaModel.cliente" Width="1.5" PointX="4.625" PointY="4.25" Height="3.3263964843749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfabricaModel.pedido" Width="1.5" PointX="2.5" PointY="5.125" Height="1.7879850260416665" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfabricaModel.produto" Width="1.5" PointX="0.75" PointY="0.875" Height="2.2496956380208335" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfabricaModel.produtoxpromocao" Width="1.5" PointX="3" PointY="1.125" Height="1.7566536458333335" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbfabricaModel.promocao" Width="1.5" PointX="5.875" PointY="1" Height="1.9802864583333335" IsExpanded="true" />
-        <AssociationConnector Association="dbfabricaModel.pedido_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.625" PointY="6.0189925130208337" />
-          <ConnectorPoint PointX="4" PointY="6.0189925130208337" />
+        <EntityTypeShape EntityType="dbfabricaModel.bairro" Width="1.5" PointX="7.375" PointY="0.5" Height="1.7879850260416745" />
+        <EntityTypeShape EntityType="dbfabricaModel.cliente" Width="1.5" PointX="7.25" PointY="3" Height="3.326396484374996" />
+        <EntityTypeShape EntityType="dbfabricaModel.pedido" Width="1.5" PointX="4.875" PointY="3.375" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="dbfabricaModel.produto" Width="1.5" PointX="0.5" PointY="3.125" Height="2.941793619791667" />
+        <EntityTypeShape EntityType="dbfabricaModel.produtoxpedido" Width="1.5" PointX="2.5" PointY="3.25" Height="1.9802864583333326" />
+        <EntityTypeShape EntityType="dbfabricaModel.produtoxpromocao" Width="1.875" PointX="0.5" PointY="0.5" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="dbfabricaModel.promocao" Width="1.5" PointX="4" PointY="0.5" Height="1.9802864583333388" />
+        <AssociationConnector Association="dbfabricaModel.FK_cliente" >
+          <ConnectorPoint PointX="8.0625" PointY="2.2879850260416745" />
+          <ConnectorPoint PointX="8.0625" PointY="3" />
         </AssociationConnector>
-        <AssociationConnector Association="dbfabricaModel.produtoxpromocao_ibfk_2" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.1151432291666667" />
-          <ConnectorPoint PointX="3" PointY="2.1151432291666667" />
+        <AssociationConnector Association="dbfabricaModel.pedido_ibfk_1" >
+          <ConnectorPoint PointX="7.25" PointY="4.2689925130208337" />
+          <ConnectorPoint PointX="6.375" PointY="4.2689925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="dbfabricaModel.produtoxpromocao_ibfk_1" ManuallyRouted="false">
-          <ConnectorPoint PointX="5.875" PointY="2.0526432291666667" />
-          <ConnectorPoint PointX="4.5" PointY="2.0526432291666667" />
-        </AssociationConnector>
-        <EntityTypeShape EntityType="dbfabricaModel.produtoxpedido" Width="1.5" PointX="3" PointY="8.5" Height="1.7879850260416674" />
         <AssociationConnector Association="dbfabricaModel.produtoxpedido_ibfk_2" >
-          <ConnectorPoint PointX="1.5" PointY="3.8167936197916661" />
-          <ConnectorPoint PointX="1.5" PointY="9.3939925130208337" />
-          <ConnectorPoint PointX="3" PointY="9.3939925130208337" />
+          <ConnectorPoint PointX="2" PointY="4.2401432291666659" />
+          <ConnectorPoint PointX="2.5" PointY="4.2401432291666659" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbfabricaModel.produtoxpromocao_ibfk_2" >
+          <ConnectorPoint PointX="1.25" PointY="3.125" />
+          <ConnectorPoint PointX="1.25" PointY="2.4802864583333388" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbfabricaModel.produtoxpromocao_ibfk_1" >
+          <ConnectorPoint PointX="4" PointY="1.4901432291666694" />
+          <ConnectorPoint PointX="2.375" PointY="1.4901432291666694" />
+        </AssociationConnector>
+        <AssociationConnector Association="dbfabricaModel.produtoxpedidopedido">
+          <ConnectorPoint PointX="4" PointY="4.3651432291666659" />
+          <ConnectorPoint PointX="4.875" PointY="4.3651432291666659" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using Presenter.Contracts;
 using DolcePeccato.Presenter;
 using System.Collections;
+using System.Data;
+using DolcePeccato.DTO;
 
 namespace DolcePeccato.WEBUI.WebSitePages
 {
@@ -37,25 +39,25 @@ namespace DolcePeccato.WEBUI.WebSitePages
 
         public string TipoProduto
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return Request.QueryString["TipoProduto"] == null ? "Todos" : Request.QueryString["TipoProduto"].ToString(); }
         }
 
-        public IList AllProdutos
+        public DataTable AllProdutos
         {
             set
-            {
+            {                                
                 rptProdutos.DataSource = value;
                 rptProdutos.DataBind();
             }
         }
 
         #endregion
+
+        protected void rptProdutos_DataBinding(object sender, EventArgs e)
+        {
+
+        }
+
+      
     }
 }

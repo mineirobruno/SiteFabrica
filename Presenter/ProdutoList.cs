@@ -12,7 +12,6 @@ namespace DolcePeccato.Presenter
 {
     public class ProdutoList
     {
-        private int xy; 
         private static readonly DaoFactory _factory = new DaoFactory();
         private readonly ProdutoDao _model; 
         private readonly IProdutoList _view;
@@ -24,9 +23,6 @@ namespace DolcePeccato.Presenter
             //_view.OnEditData += new EventHandler<EventArgs>(OnEditData);
             _model = new ProdutoDao();
 
-            _view.AllProdutos = _model.GetAllToGrid("");
-
-
         }
 
         /// <summary>
@@ -34,8 +30,9 @@ namespace DolcePeccato.Presenter
         /// </summary>
         void OnInitialize(object sender, EventArgs e)
         {
-           
+            _view.AllProdutos = _model.GetAllToRepeater(_view.TipoProduto);
         }
+
 
         ///// <summary>
         ///// Método responsável pelo redirecionamento para tela de Edição da entidade

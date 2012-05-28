@@ -122,9 +122,7 @@
     <Content Include="WebSitePages\js\jquery.js" />
     <Content Include="WebSitePages\js\jquery.pajinate.js" />
     <Content Include="WebSitePages\js\slides.min.jquery.js" />
-    <Content Include="WebSitePages\Bombons.aspx" />
     <Content Include="WebSitePages\ProdutoCadastro.aspx" />
-    <Content Include="WebSitePages\Cestas.aspx" />
     <Content Include="WebSitePages\ProdutoDetalhe.aspx" />
     <Content Include="WebSitePages\ProdutoLista.aspx" />
     <Content Include="WebSitePages\old\produtos-bombons.html" />
@@ -168,26 +166,12 @@
     <Compile Include="WebSitePages\Empresa.aspx.designer.cs">
       <DependentUpon>Empresa.aspx</DependentUpon>
     </Compile>
-    <Compile Include="WebSitePages\Bombons.aspx.cs">
-      <DependentUpon>Bombons.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebSitePages\Bombons.aspx.designer.cs">
-      <DependentUpon>Bombons.aspx</DependentUpon>
-    </Compile>
     <Compile Include="WebSitePages\ProdutoCadastro.aspx.cs">
       <DependentUpon>ProdutoCadastro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="WebSitePages\ProdutoCadastro.aspx.designer.cs">
       <DependentUpon>ProdutoCadastro.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebSitePages\Cestas.aspx.cs">
-      <DependentUpon>Cestas.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebSitePages\Cestas.aspx.designer.cs">
-      <DependentUpon>Cestas.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSitePages\ProdutoDetalhe.aspx.cs">
       <DependentUpon>ProdutoDetalhe.aspx</DependentUpon>

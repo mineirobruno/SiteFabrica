@@ -22,31 +22,31 @@ namespace DolcePeccato.WEBUI.WebSitePages {
         protected global::System.Web.UI.WebControls.TextBox txtNome;
         
         /// <summary>
-        /// CustomValidator1 control.
+        /// CustomValidator5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator1;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator5;
         
         /// <summary>
-        /// txtMensagem control.
+        /// rdTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtMensagem;
+        protected global::System.Web.UI.WebControls.RadioButtonList rdTipo;
         
         /// <summary>
-        /// CustomValidator2 control.
+        /// validator2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator2;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator validator2;
         
         /// <summary>
         /// txtEmail control.
@@ -58,13 +58,103 @@ namespace DolcePeccato.WEBUI.WebSitePages {
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
         
         /// <summary>
-        /// CustomValidator3 control.
+        /// CustomValidator7 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator3;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator7;
+        
+        /// <summary>
+        /// txtRamo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRamo;
+        
+        /// <summary>
+        /// CustomValidator8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator8;
+        
+        /// <summary>
+        /// txtRua control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRua;
+        
+        /// <summary>
+        /// CustomValidator6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator6;
+        
+        /// <summary>
+        /// txtNumero control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtNumero;
+        
+        /// <summary>
+        /// CustomValidator10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator10;
+        
+        /// <summary>
+        /// ddlBairro control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlBairro;
+        
+        /// <summary>
+        /// CustomValidator9 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator9;
+        
+        /// <summary>
+        /// txtCep control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtCep;
+        
+        /// <summary>
+        /// CustomValidator11 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator11;
         
         /// <summary>
         /// txtTelefone control.
@@ -76,21 +166,21 @@ namespace DolcePeccato.WEBUI.WebSitePages {
         protected global::System.Web.UI.WebControls.TextBox txtTelefone;
         
         /// <summary>
-        /// CustomValidator4 control.
+        /// CustomValidator12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator4;
+        protected global::System.Web.UI.WebControls.CustomValidator CustomValidator12;
         
         /// <summary>
-        /// btnEnviaEmail control.
+        /// btnSalvar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnviaEmail;
+        protected global::System.Web.UI.WebControls.Button btnSalvar;
     }
 }

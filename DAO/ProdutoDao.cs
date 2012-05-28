@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using DAO.Contracts;
 using DolcePeccato.DTO;
+using System.Data;
 
 namespace DolcePeccato.DAO
 {
@@ -37,10 +38,58 @@ namespace DolcePeccato.DAO
 
         }
 
+
         public int CountToGrid()
         {
             throw new NotImplementedException();
         }
+
+        public DataTable GetAllToRepeater(String Tipo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                
+                dt.Columns.Add("ProdutoID");
+                dt.Columns.Add("Nome");
+                dt.Columns.Add("Tipo");
+                dt.Columns.Add("Descricao");
+                dt.Columns.Add("ValorCentavos");
+                dt.Columns.Add("ValorReal");
+
+                List<produto> lista = new List<produto>();
+                dbfabricaEntities context = new dbfabricaEntities();
+                if (Tipo != "Todos")
+                {
+                    lista = context.produto.Where(q => q.Tipo.ToLower() == Tipo.ToLower()).OrderBy(q => q.Nome).ToList();
+                }
+                else
+                {
+                    lista = context.produto.OrderBy(q => q.Nome).ToList();
+                }
+                foreach (produto p in lista)
+                {
+                    object[] obj = new object[6];
+                    obj[0] = p.ProdutoID;
+                    obj[1] = p.Nome;
+                    obj[2] = p.Tipo;
+                    obj[3] = p.Descricao;
+                    obj[4] = p.Preco.ToString("#.00").Split(',')[1];
+                    obj[5] = p.Preco.ToString("#");
+                    dt.Rows.Add(obj);
+                }
+                  
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
 
         public DTO.produto GetById(int _ProdutoID)
         {

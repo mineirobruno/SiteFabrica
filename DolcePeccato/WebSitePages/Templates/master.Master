@@ -59,10 +59,10 @@
 	<ul id="menu">
     	<li><a id="home" href="Default.aspx" class="current">Home</a></li>
         <li><a id="empresa" href="Empresa.aspx">Empresa</a></li>
-        <li><a id="produtos" href="ProdutoList.aspx">Produtos</a>
+        <li><a id="produtos" href="ProdutoLista.aspx">Produtos</a>
         	<ul class="dropdown">
-            	<li><a href="Cestas.aspx">Cestas</a></li>
-                <li><a href="Bombons.aspx">Bombons</a></li>
+            	<li><a href="ProdutoLista.aspx?TipoProduto=Cesta">Cestas</a></li>
+                <li><a href="ProdutoLista.aspx?TipoProduto=Bombom">Bombons</a></li>
             </ul>
         </li>        
         <li><a id="promocoes" href="#">Promoções</a></li>
@@ -85,10 +85,10 @@
             <ul>
             	<li><a href="~/WebSitePages/Default.aspx">Home</a></li>
                 <li><a href="~/WebSitePages/Empresa.aspx">Empresa</a></li>
-                <li><a href="~/WebSitePages/ProdutoList.aspx">Produtos</a>
+                <li><a href="~/WebSitePages/ProdutoLista.aspx">Produtos</a>
                 	<ul>
-                    	<li><a href="~/WebSitePages/Cestas.aspx">Cestas</a></li>
-                        <li><a href="~/WebSitePages/Bombons.aspx">Bombons</a></li>
+                    	<li><a href="~/WebSitePages/ProdutoLista.aspx?TipoProduto=Cesta">Cestas</a></li>
+                        <li><a href="~/WebSitePages/ProdutoLista.aspx?TipoProduto=Bombom">Bombons</a></li>
                     </ul>
                 </li>
                 <li><a href="#">Promoções</a></li>

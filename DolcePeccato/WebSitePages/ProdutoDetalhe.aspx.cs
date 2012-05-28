@@ -20,7 +20,7 @@ namespace DolcePeccato.WEBUI.WebSitePages
 
         public int ProdutoID
         {
-            get { return Request.QueryString["id"] == null ? 0 : int.Parse(Request.QueryString["id"].ToString()); }
+            get { return Request.QueryString["ProdutoID"] == null ? 0 : int.Parse(Request.QueryString["ProdutoID"].ToString()); }
         }
 
         public string Nome

@@ -5,3 +5,10 @@ C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\Dolc
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.dll
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\bin\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\bin\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\bin\Debug\DTO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\bin\Debug\DTO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO.Contracts\obj\Debug\DolcePeccato.DAO.Contracts.pdb

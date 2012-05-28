@@ -8,3 +8,8 @@ C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\Dolc
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\Framework.dll
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\Framework\obj\Debug\Framework.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Framework\bin\Debug\Framework.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Framework\bin\Debug\Framework.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Framework\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Framework\obj\Debug\Framework.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\Framework\obj\Debug\Framework.pdb

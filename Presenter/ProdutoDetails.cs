@@ -58,7 +58,6 @@ namespace DolcePeccato.Presenter
 
           private void PopulateForm()
           {
-
               _view.Descricao = Entidade.Descricao;
               //_view.Estoque = p.Estoque.ToString();
               _view.FotoSource = "img/Image.ashx?idProduto=" + Entidade.ProdutoID;

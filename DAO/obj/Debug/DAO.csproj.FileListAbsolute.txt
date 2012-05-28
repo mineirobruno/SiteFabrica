@@ -7,3 +7,12 @@ C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\Dolc
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO\obj\Debug\ResolveAssemblyReference.cache
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO\obj\Debug\DAO.dll
 C:\Documents and Settings\Bruno\Meus documentos\Visual Studio 2010\Projects\DolcePeccato\DAO\obj\Debug\DAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DAO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DolcePeccato.DAO.Contracts.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DTO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DolcePeccato.DAO.Contracts.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\bin\Debug\DTO.pdb
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\obj\Debug\DAO.dll
+C:\Users\Bruno\Documents\Visual Studio 2010\Projects\DolcePeccato\SiteFabrica\DAO\obj\Debug\DAO.pdb

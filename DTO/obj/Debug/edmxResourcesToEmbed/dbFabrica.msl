@@ -1,32 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dbfabricaModelStoreContainer" CdmEntityContainer="dbfabricaEntities">
-    <EntitySetMapping Name="cliente">
-      <EntityTypeMapping TypeName="dbfabricaModel.cliente">
-        <MappingFragment StoreEntitySet="cliente">
-          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
-          <ScalarProperty Name="Nome" ColumnName="Nome" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
-          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
-          <ScalarProperty Name="Ramo" ColumnName="Ramo" />
-          <ScalarProperty Name="Rua" ColumnName="Rua" />
-          <ScalarProperty Name="Numero" ColumnName="Numero" />
-          <ScalarProperty Name="Complemento" ColumnName="Complemento" />
-          <ScalarProperty Name="Cep" ColumnName="Cep" />
-          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="pedido">
-      <EntityTypeMapping TypeName="dbfabricaModel.pedido">
-        <MappingFragment StoreEntitySet="pedido">
-          <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
-          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
-          <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="produto">
       <EntityTypeMapping TypeName="dbfabricaModel.produto">
         <MappingFragment StoreEntitySet="produto">
@@ -66,6 +40,40 @@
           <ScalarProperty Name="ProdutoID" ColumnName="ProdutoID" />
           <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
           <ScalarProperty Name="ProdutoXPedidoID" ColumnName="ProdutoXPedidoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bairro">
+      <EntityTypeMapping TypeName="dbfabricaModel.bairro">
+        <MappingFragment StoreEntitySet="bairro">
+          <ScalarProperty Name="Valor_Entrega" ColumnName="Valor_Entrega" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="BairroID" ColumnName="BairroID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cliente">
+      <EntityTypeMapping TypeName="dbfabricaModel.cliente">
+        <MappingFragment StoreEntitySet="cliente">
+          <ScalarProperty Name="BairroID" ColumnName="BairroID" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Numero_Comp" ColumnName="Numero/Comp" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="Ramo" ColumnName="Ramo" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedido">
+      <EntityTypeMapping TypeName="dbfabricaModel.pedido">
+        <MappingFragment StoreEntitySet="pedido">
+          <ScalarProperty Name="DataPedido" ColumnName="DataPedido" />
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
